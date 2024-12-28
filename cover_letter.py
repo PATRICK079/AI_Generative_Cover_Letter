@@ -78,6 +78,10 @@ def cover_letter_pdf(text):
     c.save()
     pdf_buffer.seek(0)
     return pdf_buffer
+from docx import Document
+from docx.shared import Pt, Inches
+from docx.enum.text import WD_PARAGRAPH_ALIGNMENT
+from io import BytesIO
 
 def cover_letter_docx(text):
     doc = Document()
@@ -112,11 +116,14 @@ def cover_letter_docx(text):
             if i == len(paragraphs) - 1:
                 paragraph.paragraph_format.space_after = Pt(0)
 
-    # Save document to buffer
+    # Save document to buffer without protection or restrictions
     buffer = BytesIO()
     doc.save(buffer)
     buffer.seek(0)
+    
+    # Make sure that no protection is applied and file is editable
     return buffer
+
 
 # Streamlit Interface
 col1, col2 = st.columns([1, 6])
