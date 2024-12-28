@@ -121,7 +121,7 @@ def cover_letter_docx(text):
 # Streamlit Interface
 col1, col2 = st.columns([1, 6])
 with col1:
-    st.image("gemini_generated_image.jpg", width=1000)
+    st.image("cover_letter.jpg", width=1000)
 with col2:
     st.markdown("""
         <div style="display: flex; align-items: center; height: 100%;">
