@@ -78,10 +78,7 @@ def cover_letter_pdf(text):
     c.save()
     pdf_buffer.seek(0)
     return pdf_buffer
-from docx import Document
-from docx.shared import Pt, Inches
-from docx.enum.text import WD_PARAGRAPH_ALIGNMENT
-from io import BytesIO
+
 
 def cover_letter_docx(text):
     doc = Document()
