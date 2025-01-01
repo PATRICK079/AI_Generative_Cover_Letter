@@ -8,9 +8,11 @@ from docx.shared import Pt, Inches
 from docx.enum.text import WD_PARAGRAPH_ALIGNMENT
 from io import BytesIO
 
-# Helper Functions
-def configure(gemini_api_key):
+# Helper Function
+def configure():
+    gemini_api_key = st.secrets["gemini"]["api_key"]  # Fetch API key from secrets
     genai.configure(api_key=gemini_api_key)
+
 
 def prompt(job_title, company_name, job_description, platform, recipient_name="Hiring Manager"):
     return f"""This is a canditate's CV in pdf format. Extract the text considering layouts, headings and subheadings.
