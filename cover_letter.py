@@ -10,7 +10,7 @@ from io import BytesIO
 
 # Helper Function
 def configure():
-    gemini_api_key = st.secrets["gemini"]["api_key"]  # Fetch API key from secrets
+    gemini_api_key = st.secrets["gemini"]["API_KEY"]  # Fetch API key from secrets
     genai.configure(api_key=gemini_api_key)
 
 
